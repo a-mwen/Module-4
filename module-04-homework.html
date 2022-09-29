@@ -65,11 +65,25 @@ console.log("IS Queue Empty " + queue.isEmpty() === false);
 
 Queue.prototype.getMin = function() {
   var maxItem = null;
+  var min = 100;
+  for(var i = 0;i < this.queue.length; i++) {
+    if (min>this.queue[i]) {
+    min = this.queue[i]; 
+      return min
+    } else {
+      return maxItem;
+
+    }
+  }
   
-  return maxItem;
 };
 
 var queue2 = new Queue();
+queue2.enqueue(1);
+queue2.enqueue(2);
+queue2.enqueue(3);
+queue2.enqueue(4);
+console.log("the minimun value is " + queue2.getMin());
 
 
 
